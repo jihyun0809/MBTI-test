@@ -9,6 +9,7 @@ const TestResult = () => {
 
   const fetchResults = async () => {
     const data = await getTestResults();
+    if (!Array.isArray(data)) return;
     const filteredData = data.filter(
       (item) => item.visibility || item.userId === user.id
     );
@@ -16,9 +17,11 @@ const TestResult = () => {
   };
 
   useEffect(() => {
-    fetchResults();
-  }, []);
-
+    if (user) {
+      fetchResults();
+    }
+  }, [user]);
+  
   return (
     <div>
       <h1>테스트 결과 목록</h1>
