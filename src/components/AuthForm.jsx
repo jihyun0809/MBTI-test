@@ -21,7 +21,7 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: #5d5dff; /* 파스텔 블루 */
+    border-color: #5d5dff; 
     box-shadow: 0 0 5px rgba(93, 93, 255, 0.3);
   }
 `;
@@ -32,14 +32,14 @@ const Button = styled.button`
   font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
-  background-color: #5d5dff; /* 파스텔 블루 */
+  background-color: #5d5dff; 
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #4a4aff; /* 더 진한 블루 */
+    background-color: #4a4aff; 
   }
 
   &:active {

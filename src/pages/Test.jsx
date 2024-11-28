@@ -31,7 +31,7 @@ const Description = styled.p`
 
 const ResultText = styled.p`
   font-size: 1.5rem;
-  color: #ff6b6b; /* 파스텔 핑크 */
+  color: #ff6b6b;
   margin-bottom: 1.5rem;
 `;
 
@@ -40,14 +40,14 @@ const Button = styled.button`
   font-size: 1rem;
   font-weight: bold;
   color: #ffffff;
-  background-color: #5d5dff; /* 파스텔 블루 */
+  background-color: #5d5dff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #4a4aff; /* 더 진한 블루 */
+    background-color: #4a4aff;
   }
 
   &:active {

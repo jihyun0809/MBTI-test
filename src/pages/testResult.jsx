@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const PageContainer = styled.div`
   padding: 2rem;
-  background-color: #fef9f9; /* 부드러운 파스텔톤 배경 */
+  background-color: #fef9f9; 
   min-height: 100vh;
   font-family: "Arial", sans-serif;
 `;
@@ -15,7 +15,7 @@ const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  color: #5d5dff; /* 파스텔 블루 */
+  color: #5d5dff; 
   margin-bottom: 2rem;
 `;
 

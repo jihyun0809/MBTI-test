@@ -4,11 +4,10 @@ import Login from "../pages/Login";
 import ProtectedRoute from "./ProtectedRouter";
 import Profile from "../pages/Profile";
 import Test from "../pages/Test";
-import Signup from "../pages/SignUp";
 import Layout from "./Layout";
-
 import UserProvider from "../components/UserProvider";
 import TestResult from "../pages/testResult";
+import Signup from "../pages/Signup";
 
 
 const Router = () => {

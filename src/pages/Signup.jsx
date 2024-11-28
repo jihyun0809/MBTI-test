@@ -10,7 +10,7 @@ const SignupContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #fef6f6; /* 부드러운 파스텔톤 배경 */
+  background-color: #fef6f6; 
   font-family: "Arial", sans-serif;
 `;
 
@@ -27,7 +27,7 @@ const SignupBox = styled.div`
 
 const Title = styled.h1`
   font-size: 2rem;
-  color: #ff6b6b; /* 파스텔 핑크 */
+  color: #ff6b6b; 
   margin-bottom: 1.5rem;
 `;
 
@@ -38,12 +38,12 @@ const Text = styled.p`
 `;
 
 const StyledLink = styled(Link)`
-  color: #5d5dff; /* 파스텔 블루 */
+  color: #5d5dff; 
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    color: #4a4aff; /* 더 진한 블루 */
+    color: #4a4aff; 
   }
 `;
 

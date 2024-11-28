@@ -8,7 +8,7 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #5d5dff; /* 파스텔 블루 */
+  background-color: #5d5dff;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
@@ -25,7 +25,7 @@ const StyledLink = styled(Link)`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffb3b3; /* 파스텔 핑크 */
+    color: #ffb3b3; 
   }
 `;
 
@@ -33,7 +33,7 @@ const LogoutButton = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: bold;
-  color: #5d5dff; /* 파스텔 블루 */
+  color: #5d5dff; 
   background-color: #ffffff;
   border: 1px solid #5d5dff;
   border-radius: 8px;

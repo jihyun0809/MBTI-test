@@ -45,18 +45,18 @@ const Button = styled.button`
   ${(props) =>
     props.variant === "toggle"
       ? `
-    background-color: #5d5dff; /* 파스텔 블루 */
+    background-color: #5d5dff; 
     &:hover {
-      background-color: #4a4aff; /* 진한 블루 */
+      background-color: #4a4aff; 
     }
     &:active {
       background-color: #3a3abf;
     }
   `
       : `
-    background-color: #ff6b6b; /* 파스텔 핑크 */
+    background-color: #ff6b6b; 
     &:hover {
-      background-color: #ff4b4b; /* 진한 핑크 */
+      background-color: #ff4b4b;
     }
     &:active {
       background-color: #d93a3a;
