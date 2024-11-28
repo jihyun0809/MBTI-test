@@ -2,6 +2,30 @@ import React, { useContext, useEffect, useState } from "react";
 import { getTestResults } from "../api/testResults";
 import TestResultItem from "../components/TestResultItem";
 import { UserContext } from "../context/UserContext";
+import styled from "styled-components";
+
+const PageContainer = styled.div`
+  padding: 2rem;
+  background-color: #fef9f9; /* 부드러운 파스텔톤 배경 */
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #5d5dff; /* 파스텔 블루 */
+  margin-bottom: 2rem;
+`;
+
+const ResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+`;
 
 const TestResult = () => {
   const { user } = useContext(UserContext);
@@ -21,19 +45,21 @@ const TestResult = () => {
       fetchResults();
     }
   }, [user]);
-  
+
   return (
-    <div>
-      <h1>테스트 결과 목록</h1>
-      {results.map((result) => (
-        <TestResultItem
-          key={result.id}
-          result={result}
-          user={user}
-          refreshResults={fetchResults}
-        />
-      ))}
-    </div>
+    <PageContainer>
+      <Title>테스트 결과 목록</Title>
+      <ResultsContainer>
+        {results.map((result) => (
+          <TestResultItem
+            key={result.id}
+            result={result}
+            user={user}
+            refreshResults={fetchResults}
+          />
+        ))}
+      </ResultsContainer>
+    </PageContainer>
   );
 };
 

@@ -1,28 +1,77 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
-const PageContainer = styled.div`
+const Header = styled.header`
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-`; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #5d5dff; /* 파스텔 블루 */
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const NavLinks = styled.nav`
+  display: flex;
+  gap: 1rem;
+`;
+
+const StyledLink = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffb3b3; /* 파스텔 핑크 */
+  }
+`;
+
+const LogoutButton = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #5d5dff; /* 파스텔 블루 */
+  background-color: #ffffff;
+  border: 1px solid #5d5dff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #5d5dff;
+    color: #ffffff;
+  }
+`;
 
 const Layout = () => {
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+
+  const handleLogout = () => {
+    setUser(null);
+    navigate("/");
+  };
+
   return (
-    // <PageContainer>
     <>
-      <header>
-        헤더
-        <br />
-        <Link to="/">홈</Link>
-        <Link to="/profile">프로필</Link>
-        <Link to="/test">테스트</Link>
-        <Link to="result">테스트결과</Link>
-      </header>
-      <Outlet />
-      <footer>푸터</footer>
+      <Header>
+        <NavLinks>
+          <StyledLink to="/">홈</StyledLink>
+          <StyledLink to="/profile">프로필</StyledLink>
+          <StyledLink to="/test">테스트</StyledLink>
+          <StyledLink to="/result">테스트 결과 목록</StyledLink>
+          <StyledLink to="/login">로그인</StyledLink>
+          <StyledLink to="/signup">회원가입</StyledLink>
+        </NavLinks>
+        <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>
+      </Header>
+      <main>
+        <Outlet />
+      </main>
     </>
-    //  </PageContainer>
   );
 };
 

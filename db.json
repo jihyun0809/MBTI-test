@@ -1,3 +1,16 @@
 {
-  "testResults": []
+  "testResults": [
+    {
+      "nickname": "망고",
+      "result": "INFJ",
+      "visibility": true,
+      "id": 1
+    },
+    {
+      "nickname": "망고",
+      "result": "ESTP",
+      "visibility": true,
+      "id": 2
+    }
+  ]
 }

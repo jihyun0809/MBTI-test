@@ -1,4 +1,51 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: #5d5dff; /* 파스텔 블루 */
+    box-shadow: 0 0 5px rgba(93, 93, 255, 0.3);
+  }
+`;
+
+const Button = styled.button`
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #5d5dff; /* 파스텔 블루 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #4a4aff; /* 더 진한 블루 */
+  }
+
+  &:active {
+    background-color: #3a3abf;
+  }
+`;
 
 const AuthForm = ({ mode, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -8,9 +55,7 @@ const AuthForm = ({ mode, onSubmit }) => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target; // 이벤트가 발생한 요소 - input 태그
-    //e.target.value:input에 들어간 값
-    //e.target.name=> 이름 input안의 이름값
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
@@ -19,10 +64,9 @@ const AuthForm = ({ mode, onSubmit }) => {
     onSubmit(formData);
   };
 
-  //버튼을 누르면 자동으로 onsubmit이 동작한다
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <Form onSubmit={handleSubmit}>
+      <Input
         type="text"
         name="id"
         value={formData.id}
@@ -30,27 +74,26 @@ const AuthForm = ({ mode, onSubmit }) => {
         placeholder="아이디"
         required
       />
-      <input
+      <Input
         type="password"
         name="password"
         value={formData.password}
         onChange={handleChange}
-        placeholder="비밀번호 "
+        placeholder="비밀번호"
         required
       />
       {mode === "signup" && (
-        <input
+        <Input
           type="text"
           name="nickname"
           value={formData.nickname}
           onChange={handleChange}
           placeholder="닉네임"
           required
-          className="w-full p-4 border border-gray-300 rounded-lg"
         />
       )}
-      <button type="submit">{mode === "login" ? "로그인" : "회원가입"}</button>
-    </form>
+      <Button type="submit">{mode === "login" ? "로그인" : "회원가입"}</Button>
+    </Form>
   );
 };
 
