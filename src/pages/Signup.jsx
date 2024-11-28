@@ -6,12 +6,11 @@ import { register } from "../api/auth";
 const Signup = () => {
   const navigate = useNavigate();
 
-
   const handleSignup = async (formData) => {
     try {
       const data = await register(formData);
-      if(data.success){
-        navigate("/login");//회원가입시 로그인으로 가시오
+      if (data.success) {
+        navigate("/login"); //회원가입시 로그인으로 가시오
       }
     } catch (error) {
       alert("회원가입에 실패했습니다. 다시 시도해주세요.");

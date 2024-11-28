@@ -6,8 +6,9 @@ import Profile from "../pages/Profile";
 import Test from "../pages/Test";
 import Signup from "../pages/SignUp";
 import Layout from "./Layout";
-import TestResult from "../pages/testResult";
+
 import UserProvider from "../components/UserProvider";
+import TestResult from "../pages/testResult";
 
 
 const Router = () => {
@@ -23,7 +24,7 @@ const Router = () => {
             <Route element={<ProtectedRoute />}>
               <Route path="/profile" element={<Profile />} />
               <Route path="/test" element={<Test />} />
-              <Route path="results" element={<TestResult />} />
+              <Route path="result" element={<TestResult />} />
             </Route>
             {/* 일반 경로 */}
           </Route>

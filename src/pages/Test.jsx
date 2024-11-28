@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TestForm from "../components/TestForm";
-import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";
+import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiDescriptions";
+import { UserContext } from "../context/UserContext";
 
-const TestPage = ({ user }) => {
+const TestPage = () => {
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
 
@@ -25,7 +27,7 @@ const TestPage = ({ user }) => {
   };
 
   const handleNavigateToResults = () => {
-    navigate("/results");
+    navigate("/result");
   };
 
   return (
